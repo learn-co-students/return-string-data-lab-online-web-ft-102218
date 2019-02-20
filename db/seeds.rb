@@ -23,3 +23,10 @@ end
   order.products << Product.find(Product.all.collect(&:id).sample)
 end
 
+all = Product.all
+
+all.each do |p|
+  p.description = "This is a test description with more text than should be there."
+  p.inventory = 0
+  p.save
+end
